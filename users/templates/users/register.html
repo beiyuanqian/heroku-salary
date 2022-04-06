@@ -1,0 +1,10 @@
+{% extends 'salary_app/base.html' %}
+
+{% block content %}
+<form action="{% url 'users:register' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button name="submit">register</button>
+    <input type="hidden" name="next" value="{% url 'salary_app:index' %}" />
+</form>
+{% endblock content %}

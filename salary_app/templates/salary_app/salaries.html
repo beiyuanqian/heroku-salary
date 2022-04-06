@@ -1,0 +1,18 @@
+{% extends "salary_app/base.html" %}
+
+{% block content %}
+<p>salary</p>
+    <ul>
+    {% for salary in salaries %}
+    <li>
+        <a href="{% url 'salary_app:salary' salary.id %}">{{ salary }}</a>
+        <a href="{% url 'salary_app:edit_salary'  salary.id%}">编辑</a>
+        <a href="{% url 'salary_app:delete_salary'  salary.id%}">删除</a>
+
+    </li>
+    {% empty %}
+    <li>No salary have been added yet.</li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'salary_app:new_salary' %}">添加</a>
+{% endblock content %}

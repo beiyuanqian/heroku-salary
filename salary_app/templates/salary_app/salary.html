@@ -1,0 +1,60 @@
+{% extends "salary_app/base.html" %}
+
+{% block content %}
+    <table width="1200" border="1" rules="all">
+    <caption>{{ salary.year }}-{{ salary.month }}工资明细</caption>
+    <colgroup span="6" width="300"></colgroup>
+    <tr>
+        <th>工资组成</th><th>金额</th>
+        <th>补贴</th><th>金额</th>
+        <th>扣款</th><th>金额</th>
+    </tr>
+    <tr>
+        <td>出勤天数：</td><td>{{ salary.attendance_day }}</td>
+        <td>餐费补贴：</td><td>{{ salary.meal_subsidy }}</td>
+        <td>餐费扣款：</td><td>{{ salary.meals_deduction }}</td>
+    </tr>
+    <tr>
+        <td>基本工资：</td><td>{{ salary.base_pay }}</td>
+        <td>高温补贴：</td><td>{{ salary.high_temperature_subsidy }}</td>
+        <td>住房扣款：</td><td>{{ salary.rent_deduction }}</td>
+    </tr>
+    <tr>
+        <td>岗位工资：</td><td>{{ salary.post_way }}</td>
+        <td>住房补贴：</td><td>{{ salary.housing_allowance }}</td>
+        <td>水电扣款：</td><td>{{ salary.water_electricity_deduction }}</td>
+    </tr>
+    <tr>
+        <td>绩效工资：</td><td>{{ salary.merit_pay }}</td>
+        <td>交通补贴：</td><td>{{ salary.traffic_subsidy }}</td>
+        <td>社保：</td><td>{{ salary.social_security }}</td>
+    </tr>
+    <tr>
+        <td>工龄工资：</td><td>{{ salary.seniority_pay }}</td>
+        <td>保健津贴：</td><td>{{ salary.health_care_subsidy }}</td>
+        <td>阳光会费：</td><td>{{ salary.sunshine_due }}</td>
+    </tr>
+    <tr>
+        <td>效益奖：</td><td>{{ salary.benefit_bonus }}</td>
+        <td>中晚班补贴：</td><td>{{ salary.middle_night_subsidy }}</td>
+        <td>公积金：</td><td>{{ salary.accumulation_fund }}</td>
+    </tr>
+    <tr>
+        <td>加班工资：</td><td>{{ salary.overtime_wage }}</td>
+        <td>稀缺专业津贴：</td><td>{{ salary.scarce_specialty_subsidy }}</td>
+        <td>所得税：</td><td>{{ salary.income_tax }}</td>
+    </tr>
+    <tr>
+        <td>工资小计：</td><td>{{ salary.wage_subtotal }}</td>
+        <td>补贴小计：</td><td>{{ salary.subsidy_subtotal}}</td>
+        <td>扣款小计：</td><td>{{ salary.deduction_subtotal }}</td>
+    </tr>
+    <tr>
+        <td>应发工资:</td><td>{{ salary.net_pay }}</td>
+        <td>实发工资:</td><td>{{ salary.net_payroll }}</td>
+        <td></td><td></td>
+    </tr>
+
+    </table>
+
+{% endblock content %}

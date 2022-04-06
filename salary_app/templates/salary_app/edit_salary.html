@@ -1,0 +1,11 @@
+{% extends "salary_app/base.html" %}
+
+{% block content %}
+    <p><a href="{% url 'salary_app:salary' salary.id %}">{{ salary }}</a> </p>
+    <p>编辑工资明细</p>
+    <form action="{% url 'salary_app:edit_salary' salary.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">编辑</button>
+    </form>
+{% endblock content %}

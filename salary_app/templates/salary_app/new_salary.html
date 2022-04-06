@@ -1,0 +1,10 @@
+{% extends "salary_app/base.html" %}
+
+{% block content %}
+<p>添加工资明细</p>
+    <form action="{% url 'salary_app:new_salary' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">添加</button>
+    </form>
+{% endblock content %}

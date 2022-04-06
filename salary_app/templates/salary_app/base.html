@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salary</title>
+</head>
+<body>
+<p>
+    <a href="{% url 'salary_app:index' %}">salary_app</a> -
+    <a href="{% url 'salary_app:salaries' %}">salaries</a> -
+    {% if user.is_authenticated %}
+        Hello,{{user.username}}.
+        <a href="{% url 'users:logout' %}">注销</a>
+    {% else %}
+        <a href="{% url 'users:register' %}">注册</a>
+        <a href="{% url 'users:login' %}">登录</a>
+    {% endif %}
+</p>
+{% block content %}
+{% endblock content %}
+</body>
+</html>
